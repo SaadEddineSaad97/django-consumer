@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 ]
 
 CELERY_RESULT_BACKEND = 'django-db'
+CELERY_BROKER_URL = 'pyamqp://guest:guest@localhost:5672//'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
