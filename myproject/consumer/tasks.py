@@ -2,7 +2,7 @@ from celery import shared_task
 from django_celery_results.models import TaskResult
 import requests
 
-from myproject.myproject.configs import WebhookConfig
+from .configs import WebhookConfig
 
 
 @shared_task
