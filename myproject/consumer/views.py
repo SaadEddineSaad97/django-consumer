@@ -9,7 +9,6 @@ def process_message_view(request):
     if request.method == 'POST':
         data = request.json
 
-        # Call the Celery task
         celery_task_result = process_message.delay(data)
 
         response_data = {'task_id': celery_task_result.id}

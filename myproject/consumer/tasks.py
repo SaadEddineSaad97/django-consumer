@@ -19,7 +19,7 @@ def process_message(message_data) -> str:
 
     processed_text = message_data['text'][::-1]
 
-    response = requests.post(webhook_url, json={'processed_text': processed_text})
+    response = requests.post(webhook_url, json={'result': processed_text, 'message_id': message_data['id']})
 
     task_result = TaskResult.objects.create(
         task_id=process_message.request.id,
